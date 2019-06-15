@@ -205,3 +205,4 @@ class _S {
         return Objects.checkIsBoolean(obj)
     }
 }
+module.exports = _S
