@@ -60,8 +60,7 @@ _S.isNaN(undefined);   => true
 
 _S.isNull(null);   => true
 
-let a
-_S.isUndefined(a);   => true
+_S.isUndefined(window.missingVariable);   => true
 ------------------------------------------------------------------------------------------------------------------
 
 Array - methods
