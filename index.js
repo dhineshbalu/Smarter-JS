@@ -1,9 +1,11 @@
 const Collections  = require('./Collections')
 const Arrays = require('./Arrays')
 const Objects = require('./Objects')
+const Numbers = require('./Numbers')
+const Strings = require('./Strings')
 
 class _S {
-    //Collections
+    //Collections methods from _
     static findWhere(arr,obj) {
       return Collections.findWhere(arr,obj)
     }
@@ -64,7 +66,7 @@ class _S {
     static sortBy(arr,prop) {
         return Collections.sortBy(arr,prop)
     }
-    //Arrays
+    //Arrays methods from _
     static first(arr) {
         return Arrays.first(arr)
     }
@@ -113,7 +115,7 @@ class _S {
     static chunk(arr,chunk) {
         return Arrays.chunk(arr,chunk)
     }
-    //Objects
+    //Objects methods from _
     static getKeys(obj) {
         return Objects.getKeys(obj)
     }
@@ -203,6 +205,90 @@ class _S {
     }
     static checkIsBoolean(obj) {
         return Objects.checkIsBoolean(obj)
+    }
+    //array methods from loadash
+    static compact(arr) {
+        return Arrays.compact(arr)
+    }
+    static concat() {
+        return Arrays.concat()
+    }
+    static drop(arr,count) {
+        return Arrays.drop(arr,count)
+    }
+    static dropRight(arr,count) {
+        return Arrays.dropRight(arr,count)
+    }
+    static dropWhile(arr,cb) {
+        return Arrays.dropWhile(arr,cb) 
+    }
+    static dropRightWhile(arr,cb) {
+        return Arrays.dropRightWhile(arr,cb) 
+    }
+    static fill(arr,val,start,end) {
+        return Arrays.fill(arr,val,start,end)
+    }
+    static join(arr,sep) {
+        return Arrays.join(arr,sep)
+    }
+    static nth(arr,index) {
+        return Arrays.nth(arr,index)
+    }
+    // Number Methods from loadash
+    static add(a,b) {
+        return Numbers.add(a,b)
+    }
+    static ceil(num) {
+        return Numbers.ceil(num)
+    }
+    static divide(a,b) {
+        return Numbers.divide(a,b) 
+    }
+    static floor(num) {
+        return Numbers.floor(num)
+    }
+    static mean(arr) {
+        return Numbers.mean(arr)
+    }
+    static multiply(a,b) {
+        return Numbers.multiply(a,b)
+    }
+    static subtract(a,b) {
+        return Numbers.subtract(a,b) 
+    }
+    static sum(arr,cb) {
+        return Numbers.sum(arr,cb) 
+    }
+    // Strings methods from loadash
+    static toLower(str) {
+        return Strings.toLower(str)
+    }
+    static toUpper(str) {
+        return Strings.toUpper(str)
+    }
+    static trim(str) {
+        return Strings.trim(str)
+    }
+    static repeat(str,count) {
+        return Strings.repeat(str,count)
+    }
+    static split(str,split,count) {
+        return Strings.split(str,split,count)
+    }
+    static camelCase(str) {
+        return Strings.camelCase(str)
+    }
+    static capitalize(s) {
+        return Strings.capitalize(s)
+    }
+    static snakeCase(str) {
+        return Strings.snakeCase(str)
+    }
+    static startsWith(str,check,count) {
+        return Strings.startsWith(str,check,count) 
+    }
+    static endsWith(str,check,count) {
+        return Strings.endsWith(str,check,count)
     }
 }
 module.exports = _S
