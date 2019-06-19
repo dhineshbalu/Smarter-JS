@@ -40,7 +40,7 @@ class Strings {
     }
     static capitalize(s) {
         if (typeof s !== 'string') return ''
-        return s.charAt(0).toUpperCase() + s.slice(1)    
+        return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()   
     }
     static snakeCase(str) {
         let Ccount = 0,Rstr = '',flag = false,CapCount = 0
@@ -89,6 +89,51 @@ class Strings {
         }
        else 
            return s.startsWith(check)
+    }
+    static padEnd(str,len,s) {
+       if (typeof s == "undefined") {
+           s = "    "
+       }
+       if (str.length < len) {
+            while(1) {
+                for (let i=0;i<s.length && str.length < len;i++) {
+                    str += s[i]
+                }
+                if (str.length >= len) 
+                  break
+            }
+            return str
+       }
+    }
+    static padStart(str,len,s) {
+        let Estr = ''
+        if (typeof s == "undefined") {
+            s = "    "
+        }
+        if (str.length + Estr.length < len) {
+             while(1) {
+                 for (let i=0;i<s.length && str.length + Estr.length < len;i++) {
+                     Estr += s[i]
+                 }
+                 if (str.length + Estr.length >= len) 
+                   break
+             }
+        }
+        return Estr + str
+    }
+    static pad(str,len,s) {
+        let total = Math.abs(str.length-len)
+        let pStart =  this.padStart(str,str.length + Math.floor(total/2),s)
+        let pEnd =  this.padEnd("", Math.ceil(total/2),s)
+        return pStart + pEnd
+    }
+    static upperFirst(s) {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)  
+    }
+    static lowerFirst(s) {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toLowerCase() + s.slice(1)   
     }
 }
 module.exports = Strings

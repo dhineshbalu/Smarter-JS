@@ -76,18 +76,6 @@ class _S {
     static initial(arr) {
         return Arrays.initial(arr)
     }
-    static without() {
-        return Arrays.without()
-    }
-    static union() {
-        return Arrays.union() 
-    }
-    static intersection() {
-        return Arrays.intersection() 
-    }
-    static difference() {
-        return Arrays.difference()
-    }
     static indexVal(arr,val) {
         return Arrays.indexVal(arr,val)
     }
@@ -103,17 +91,101 @@ class _S {
     static ToObject(arr1,arr2) {
         return Arrays.ToObject(arr1,arr2)
     }
-    static zip() {
-        return Arrays.zip() 
-    }
-    static unzip() {
-        return Arrays.unzip()
-    }
     static uniq(arr) {
         return Arrays.uniq(arr)
     }
     static chunk(arr,chunk) {
         return Arrays.chunk(arr,chunk)
+    }
+    //arguments methods  of arrays
+    static without() {
+        let arr1 = arguments[0]
+        let arr2 = []
+        let arr3 = []
+        for (let i=1;i<arguments.length;i++)
+           arr2.push(arguments[i])
+        for (let i=0;i<arr1.length;i++) {
+          if (!(arr2.indexOf(arr1[i]) >= 0)) {
+              arr3.push(arr1[i])
+          }
+        }
+     return arr3
+    }
+    static union() {
+        let map = new Map()
+        var arr = []
+        for (let i=0;i<arguments.length;i++) {
+            for(let j=0;j<arguments[i].length;j++) {
+                 if (!map.has(arguments[i][j])) {
+                     map.set(arguments[i][j],1)
+                     arr.push(arguments[i][j])
+                 }
+            } 
+        }
+        return arr
+    }
+    static intersection() {
+        var arr1 = arguments[0]
+        var arr2 = []
+        for (var i=0;i<arr1.length;i++) {
+            for (var j=1;j<arguments.length;j++) {
+                  if (!(arguments[j].indexOf(arr1[i]) >= 0))
+                     break 
+            }
+            if (j == arguments.length) 
+              arr2.push(arr1[i])
+        }
+      return arr2
+    }
+    static difference() {
+        var arr = []
+       for (var i=0;i<arguments[0].length;i++) {
+         for(var j=1;j<arguments.length;j++) {
+            if (arguments[j].indexOf(arguments[0][i]) >= 0)
+              break 
+         }
+            if (j == arguments.length) 
+              arr.push(arguments[0][i])
+       }
+       return arr
+    }
+    static zip() {
+        let a = []
+        let arr = new Array(arguments.length)
+        for (let i=0;i<arguments.length;i++)
+           arr[i] = new Array()
+        for (let i=0;i<arguments.length;i++) {
+            for (let j=0;j<arguments[i].length;j++) {
+                arr[j].push(arguments[i][j])
+            }
+        }
+        a.push(arr)
+        return a
+    }
+    static unzip() {
+        let a = arguments[0]
+        let arr = new Array(a.length)
+        for (let i=0;i<a.length;i++)
+           arr[i] = new Array()
+        for (let i=0;i<a.length;i++) {
+            for (let j=0;j<a[i].length;j++) {
+                arr[j].push(a[i][j])
+            }
+        }
+        return arr
+    }
+    static concat() {
+        let newArr = []
+        for (let i=0;i<arguments.length;i++) {
+          if (typeof arguments[i] == "number") {
+              newArr.push(arguments[i])
+          }  else {
+             for (let j=0;j<arguments[i].length;j++) {
+               newArr.push(arguments[i][j])
+             }
+          }
+        }
+        return newArr
     }
     //Objects methods from _
     static getKeys(obj) {
@@ -210,9 +282,6 @@ class _S {
     static compact(arr) {
         return Arrays.compact(arr)
     }
-    static concat() {
-        return Arrays.concat()
-    }
     static drop(arr,count) {
         return Arrays.drop(arr,count)
     }
@@ -289,6 +358,21 @@ class _S {
     }
     static endsWith(str,check,count) {
         return Strings.endsWith(str,check,count)
+    }
+    static padEnd(str,len,s) {
+        return Strings.padEnd(str,len,s)
+    }
+    static padStart(str,len,s) {
+        return Strings.padStart(str,len,s)
+    } 
+    static pad(str,len,s) {
+        return Strings.pad(str,len,s)
+    }
+    static upperFirst(s) {
+        return Strings.upperFirst(s)
+    }
+    static lowerFirst(s) {
+        return Strings.lowerFirst(s)
     }
 }
 module.exports = _S
