@@ -88,8 +88,8 @@ class _S {
     static findLastIndex(arr,obj) {
         return Arrays.findLastIndex(arr,obj)
     }
-    static ToObject(arr1,arr2) {
-        return Arrays.ToObject(arr1,arr2)
+    static object(arr1,arr2) {
+        return Arrays.object(arr1,arr2)
     }
     static uniq(arr) {
         return Arrays.uniq(arr)
@@ -215,11 +215,11 @@ class _S {
     static has(obj,key) {
         return Objects.has(obj,key)
     }
-    static getPropertyOf(obj,arg) {
-        return Objects.getPropertyOf(obj,arg)
+    static propertyOf(obj,arg) {
+        return Objects.propertyOf(obj,arg)
     }
-    static getClone(obj) {
-        return Objects.getClone(obj)
+    static clone(obj) {
+        return Objects.clone(obj)
     }
     static isEqual(a,b) {
         return Objects.isEqual(a,b)
@@ -242,14 +242,14 @@ class _S {
     static isNumber(num) {
         return Objects.isNumber(num)
     }
-    static checkIsFinite(num) {
+    static isFinite(num) {
         return Objects.checkIsFinite(num)
     }
     static isDate(date) {
         return Objects.isDate(date)
     }
-    static checkIsMatched(obj1,obj2) {
-        return Objects.checkIsMatched(obj1,obj2)
+    static isMatch(obj1,obj2) {
+        return Objects.isMatch(obj1,obj2)
     }
     static checkIsMap(obj) {
         return Objects.checkIsMap(obj)
@@ -269,7 +269,7 @@ class _S {
     static checkIsUndefined(obj) {
         return Objects.checkIsUndefined(obj)
     }
-    static checkIsNaN(obj) {
+    static isNaN(obj) {
         return Objects.checkIsNaN(obj)
     }
     static setDefault(obj1,obj2) {

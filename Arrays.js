@@ -75,7 +75,7 @@ class Arrays {
       }
       
     }
-    static ToObject(arr1,arr2) {
+    static object(arr1,arr2) {
       let o = {}
       for (let i=0;i<arr1.length;i++) {
         o[arr1[i]] = arr2[i]

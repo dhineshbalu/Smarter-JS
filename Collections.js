@@ -79,7 +79,10 @@ class Collections {
                max = val
            }
         }
-        return arr[maxIndex]
+        if (maxIndex != -1)
+           return arr[maxIndex]
+        else 
+        return Math.pow(10, 1000)
     }
     static min(arr,cb) {
         let min = 100000,val,minIndex = -1

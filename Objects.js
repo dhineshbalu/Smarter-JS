@@ -50,7 +50,7 @@ class Objects {
     else
       return false
   }
-  static getPropertyOf(obj,arg) {
+  static propertyOf(obj,arg) {
     let values = []
     if (typeof arg == 'string') {
       return obj[arg]
@@ -63,7 +63,7 @@ class Objects {
       return values
     }
   }
-  static getClone(obj) {
+  static clone(obj) {
     return Object.assign({},obj)
   }
   static isEqual(a,b) {
@@ -108,7 +108,7 @@ class Objects {
   static isDate(date) {
     return date instanceof Date
   }
-  static checkIsMatched(obj1,obj2) {
+  static isMatch(obj1,obj2) {
      for(let [key,val] of Object.entries(obj2)) {
        if (!(obj1.hasOwnProperty(key) && obj1[key] == val))
            return false
